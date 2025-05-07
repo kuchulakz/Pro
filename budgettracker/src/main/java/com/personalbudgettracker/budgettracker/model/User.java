@@ -1,5 +1,5 @@
 package com.personalbudgettracker.budgettracker.model;
-
+ 
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,13 +9,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-
+import jakarta.persistence.Table;
+ 
 @Entity
 public class User {
-    @Id
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
  
@@ -31,12 +31,16 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
  
-    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
+    @OneToMany
     private List<Expense> expense;
+ 
+    // @OneToOne
+    // private Income income;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "income_id", referencedColumnName = "id")
-    private Income income;
+    
+     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+     private Income income;
+    
  
     public User() {}
  
@@ -81,5 +85,5 @@ public class User {
  
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }    
+    }
 }

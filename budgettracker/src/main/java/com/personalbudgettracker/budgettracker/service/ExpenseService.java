@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.personalbudgettracker.budgettracker.model.Expense;
-import com.personalbudgettracker.budgettracker.repo.ExpenseRepo;
+import com.personalbudgettracker.budgettracker.repository.ExpenseRepo;
 
 import java.util.List;
 

@@ -1,10 +1,11 @@
 package com.personalbudgettracker.budgettracker.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.personalbudgettracker.budgettracker.model.Category;
-import com.personalbudgettracker.budgettracker.repo.CategoryRepo;
+import com.personalbudgettracker.budgettracker.repository.CategoryRepo;
 
 import java.util.List;
 
